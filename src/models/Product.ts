@@ -1,5 +1,6 @@
 import mongoose, { Schema, Document } from 'mongoose';
 
+
 // Definisikan interface Product
 export interface Product extends Document {
   name: string;
@@ -7,7 +8,6 @@ export interface Product extends Document {
   price: number;
   productCategory: string[];
   thumbnails: string[];
-  owner: Schema.Types.ObjectId; // Referensi ke model User
 }
 
 // Definisikan schema Product
@@ -16,8 +16,7 @@ const productSchema: Schema<Product> = new Schema({
   description: { type: String, required: true },
   price: { type: Number, required: true },
   productCategory: [{ type: String }],
-  thumbnails: [{ type: String }],
-  owner: { type: Schema.Types.ObjectId, ref: 'User', required: true }, // Referensi ke model User
+  thumbnails: [{ type: String }]
 });
 
 // Buat model Product

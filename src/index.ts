@@ -7,7 +7,7 @@ const app = express();
 
 app.use(express.json());
 
-const dbUrl = 'mongodb://localhost:27017/twl2023'; // Ganti dengan URL MongoDB Anda
+const dbUrl = 'mongodb+srv://ferdiansyah2100016113:smaroe87@cluster0.iagpkxn.mongodb.net/tekweb?retryWrites=true&w=majority'; // Ganti dengan URL MongoDB Anda
 mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true } as any)
   .then(() => {
     console.log('Terhubung ke database MongoDB');
